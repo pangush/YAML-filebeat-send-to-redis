@@ -1,0 +1,23 @@
+---
+version: '3.3'
+services:
+
+  # Filebeat sending data to redis
+  filebeat_send_to_redis:
+    image: store/elastic/filebeat:7.5.1
+    hostname: filebeat_send_to_redis
+    container_name: filebeat_send_to_redis
+    volumes:
+      # Bind-mount the logs/ directory, so Filebeat can read its files
+      - "./mnt/logs/:/mnt/logs/:ro"
+      # Bind-mount a custom configuration file
+      - "./docker-compose/filebeat-send-to-redis.yml:/usr/share/filebeat/filebeat.yml:ro"
+      # Bind-mount the registry file to avoid data duplication between restarts
+      - "./docker-compose/filebeat-send-to-redis/data/:/usr/share/filebeat/data/"
+    command: filebeat -e
+    restart: on-failure
+    networks:
+      - stack
+
+networks:
+  stack: {}

@@ -1,0 +1,10 @@
+filebeat.inputs:
+  - type: log
+    enable: true
+    paths:
+      - /mnt/logs/*.log
+
+output.redis:
+  hosts: ["host.docker.internal:6379"]
+  key: "filebeat"
+  db: 0

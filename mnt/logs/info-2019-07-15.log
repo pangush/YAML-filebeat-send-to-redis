@@ -1,0 +1,18 @@
+[2019-07-15 10:12:20] local.INFO: array (
+  'url' => 'https://laravel55.test/mobileapi/user',
+  'data' =>
+  array (
+  ),
+  'header_token' => NULL,
+)
+[2019-07-15 10:12:20] local.INFO: array (
+  'api' => 'https://laravel55.test/mobileapi/user',
+  'exe_duration' => 0.8863959312438965,
+)
+[2019-07-15 10:12:22] local.INFO: array (
+  'url' => 'https://laravel55.test/mobileapi/user',
+  'data' =>
+  array (
+  ),
+  'header_token' => NULL,
+)
